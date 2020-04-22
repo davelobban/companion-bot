@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
-
+using System.Collections.Generic;
 namespace temp4
 {
     internal class User {
@@ -11,11 +10,15 @@ namespace temp4
     }
     public class CompanionBot
     {
-        User _user;        
-
-        public CompanionBot()
+        User _user;
+        List<string> _messages;
+        public CompanionBot() :this(new List<string>())
+        { 
+        }
+        public CompanionBot(List<string> messages)
         {
             _user = new User("");
+            _messages = messages;
         }
 
         public string Hello()
@@ -32,6 +35,11 @@ namespace temp4
         public string HappyMe()
         {
             return $"Have a great day today {_user.Name}!";
+        }
+
+        public string Happier()
+        {
+            return _messages[0];
         }
     }
 }

@@ -1,0 +1,25 @@
+TDD refresher
+
+Red: 		Write the failing test for the behaviour
+Green:		Write the s*simplest* test that passes the test
+Refactor:	From the point of security that you have code that passes the tst refactor the code to make it the best it can be.
+
+
+
+Ping Pong TDD
+
+Programmer A writes and runs the simplest test they can think of that will fail
+Programmer B writes the code to get the test to pass
+Programmer B writes and runs the simplest test they can think of that will fail
+Programmer A writes the code to get the test to pass
+
+
+in a three
+
+
+Programmer A writes and runs the simplest test they can think of that will fail
+Programmer B writes the code to get the test to pass
+Programmer B writes and runs the simplest test they can think of that will fail
+Programmer C writes the code to get the test to pass
+Programmer C writes and runs the simplest test they can think of that will fail
+Programmer A writes the code to get the test to pass
