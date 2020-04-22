@@ -67,7 +67,7 @@ namespace temp4.Tests
         }
 
         [TestCase("Lee", 4)]
-        [TestCase("Tony", 40)]
+        [TestCase("Tony", 400)]
         public void HappierReturnsFourMessagesInEqualDistribution(string name, int numberOfTimesToCallMethod)
         {
             var message = "m1";
@@ -84,7 +84,6 @@ namespace temp4.Tests
             sut.MyNameIs(name);
             Dictionary<string, int> actual = CallHappier(sut, numberOfTimesToCallMethod);
             Assert.AreEqual(expected, actual);
-
             static Dictionary<string, int> CallHappier(CompanionBot sut, int callCount)
             {
                 var actual = new Dictionary<string, int>();
@@ -100,6 +99,9 @@ namespace temp4.Tests
                     {
                         actual.Add(returned, 1);
                     }
+                }
+                foreach (var item in actual) {
+                    TestContext.Out.WriteLine($"{item.Key} {item.Value}");
                 }
                 return actual;
             }
