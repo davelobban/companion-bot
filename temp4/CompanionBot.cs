@@ -12,6 +12,7 @@ namespace temp4
     {
         User _user;
         List<string> _messages;
+        List<string> _unsentMessages= new List<string>();
         public CompanionBot() :this(new List<string>())
         { 
         }
@@ -39,7 +40,15 @@ namespace temp4
 
         public string Happier()
         {
-            return _messages[0];
+            if (_unsentMessages.Count == 0)
+            {
+                _messages.ForEach(m => _unsentMessages.Add(m));
+            }
+            var numberOfUnsentMessages = _unsentMessages.Count;
+            var index = new Random((int)DateTime.Now.Ticks%1000).Next(0, numberOfUnsentMessages - 1);
+            var message = _unsentMessages[index];
+            _unsentMessages.RemoveAt(index);
+            return message;
         }
     }
 }
