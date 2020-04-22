@@ -27,5 +27,16 @@ namespace temp4.Tests
             var expected = $"Hello {name}";
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase("Lee")]
+        [TestCase("Tony")]
+        public void HappyMeIsReturnsMessagePlusName(string name)
+        {
+            var sut = new CompanionBot();
+            sut.MyNameIs(name);
+            var actual = sut.HappyMe();
+            var expected = $"Have a great day today {name}!";
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
